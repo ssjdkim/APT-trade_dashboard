@@ -21,7 +21,7 @@
         
         .loader {
             border: 4px solid #f3f3f3;
-            border-top: 4px solid #3b82f6;
+            border-top: 4px solid #10b981; /* 초록색(emerald-500)으로 변경 */
             border-radius: 50%;
             width: 40px;
             height: 40px;
@@ -43,13 +43,13 @@
         <header class="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div>
                 <h1 class="text-3xl font-bold text-slate-900 flex items-center gap-2">
-                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                     우리 동네 아파트 실거래가 대시보드
                 </h1>
                 <p class="text-slate-500 mt-2">구글 시트 연동 실시간 데이터 분석</p>
             </div>
             <div class="bg-white px-4 py-2 rounded-lg shadow-sm text-sm font-medium text-slate-600 border border-slate-200">
-                마지막 업데이트: <span id="lastUpdate" class="text-blue-600"></span>
+                마지막 업데이트: <span id="lastUpdate" class="text-emerald-600"></span>
             </div>
         </header>
 
@@ -57,12 +57,12 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <!-- 총 거래건수 -->
             <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 flex items-center">
-                <div class="p-3 rounded-full bg-blue-50 text-blue-600 mr-4">
+                <div class="p-3 rounded-full bg-emerald-50 text-emerald-600 mr-4">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
                 </div>
                 <div>
                     <p class="text-sm font-medium text-slate-500">전체 거래 건수</p>
-                    <p class="text-2xl font-bold text-slate-900" id="totalCount">0<span class="text-base font-normal text-slate-500 ml-1">건</span></p>
+                    <p class="text-2xl font-bold text-emerald-600" id="totalCount">0<span class="text-base font-normal text-slate-500 ml-1">건</span></p>
                 </div>
             </div>
             <!-- 평균 거래가 -->
@@ -72,36 +72,50 @@
                 </div>
                 <div>
                     <p class="text-sm font-medium text-slate-500">평균 거래가격</p>
-                    <p class="text-2xl font-bold text-slate-900" id="avgPrice">0</p>
+                    <p class="text-2xl font-bold text-emerald-600" id="avgPrice">0</p>
                 </div>
             </div>
             <!-- 최고 거래가 -->
             <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 flex items-center">
-                <div class="p-3 rounded-full bg-rose-50 text-rose-600 mr-4">
+                <div class="p-3 rounded-full bg-emerald-50 text-emerald-600 mr-4">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                 </div>
                 <div>
                     <p class="text-sm font-medium text-slate-500">최고 거래가격</p>
-                    <p class="text-2xl font-bold text-slate-900" id="maxPrice">0</p>
+                    <p class="text-2xl font-bold text-emerald-600" id="maxPrice">0</p>
                 </div>
             </div>
             <!-- 최저 거래가 -->
             <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 flex items-center">
-                <div class="p-3 rounded-full bg-indigo-50 text-indigo-600 mr-4">
+                <div class="p-3 rounded-full bg-emerald-50 text-emerald-600 mr-4">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0v-8m0 8l-8-8-4 4-6-6"></path></svg>
                 </div>
                 <div>
                     <p class="text-sm font-medium text-slate-500">최저 거래가격</p>
-                    <p class="text-2xl font-bold text-slate-900" id="minPrice">0</p>
+                    <p class="text-2xl font-bold text-emerald-600" id="minPrice">0</p>
                 </div>
             </div>
         </div>
 
-        <!-- 차트 섹션 -->
-        <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 mb-8">
-            <h2 class="text-lg font-bold text-slate-800 mb-4">월별 평균 거래가격 추이</h2>
-            <div class="h-80 w-full relative">
-                <canvas id="priceChart"></canvas>
+        <!-- 차트 & 랭킹 섹션 -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            <!-- 차트 섹션 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 lg:col-span-2">
+                <h2 class="text-lg font-bold text-slate-800 mb-4">월별 평균 거래가격 추이</h2>
+                <div class="h-80 w-full relative">
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </div>
+
+            <!-- 랭킹 섹션 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 flex flex-col">
+                <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    우리 동네 비싼 아파트 TOP 5
+                </h2>
+                <div id="top5List" class="flex-1 flex flex-col gap-3 justify-center">
+                    <!-- 데이터가 동적으로 추가됩니다 -->
+                </div>
             </div>
         </div>
 
@@ -214,15 +228,8 @@
 
             const tbody = document.getElementById('tableBody');
             
-            // 최신 거래일자 순으로 정렬하기 위해 복사본 정렬
-            const sortedData = [...data].sort((a, b) => {
-                const dateA = new Date(a['거래일자'] || a['년월일'] || '');
-                const dateB = new Date(b['거래일자'] || b['년월일'] || '');
-                return dateB - dateA; // 내림차순
-            });
-
-            sortedData.forEach(row => {
-                // 헤더명 호환성 처리 (시트 상황에 따라 다를 수 있음)
+            // 데이터 속성 추출 및 숫자 변환 미리 수행
+            const processedData = data.map(row => {
                 const dateRaw = row['거래일자'] || row['년월일'] || '';
                 const aptName = row['아파트명'] || row['아파트'] || '';
                 const dong = row['법정동'] || '';
@@ -230,24 +237,33 @@
                 const floor = row['층'] || '';
                 const priceRaw = row['거래금액(만원)'] || row['거래금액'] || '';
                 const buildYear = row['건축년도'] || '';
-
                 const priceNum = parsePrice(priceRaw);
+                return { dateRaw, aptName, dong, area, floor, priceRaw, priceNum, buildYear };
+            });
 
+            // 최신 거래일자 순으로 정렬 (테이블용)
+            const sortedData = [...processedData].sort((a, b) => {
+                const dateA = new Date(a.dateRaw);
+                const dateB = new Date(b.dateRaw);
+                return dateB - dateA; // 내림차순
+            });
+
+            sortedData.forEach(item => {
                 // 요약 통계 계산
-                if (priceNum > 0) {
-                    totalSum += priceNum;
-                    if (priceNum > maxPrice) maxPrice = priceNum;
-                    if (priceNum < minPrice) minPrice = priceNum;
+                if (item.priceNum > 0) {
+                    totalSum += item.priceNum;
+                    if (item.priceNum > maxPrice) maxPrice = item.priceNum;
+                    if (item.priceNum < minPrice) minPrice = item.priceNum;
                     validCount++;
 
                     // 월별 데이터 집계 (차트용)
                     // 날짜 형식이 YYYY-MM-DD 라고 가정하고 앞 7자리 추출
-                    const monthKey = dateRaw.substring(0, 7); 
+                    const monthKey = item.dateRaw.substring(0, 7); 
                     if (monthKey) {
                         if (!monthlyData[monthKey]) {
                             monthlyData[monthKey] = { sum: 0, count: 0 };
                         }
-                        monthlyData[monthKey].sum += priceNum;
+                        monthlyData[monthKey].sum += item.priceNum;
                         monthlyData[monthKey].count += 1;
                     }
                 }
@@ -256,16 +272,52 @@
                 const tr = document.createElement('tr');
                 tr.className = "hover:bg-slate-50 transition-colors";
                 tr.innerHTML = `
-                    <td class="py-3 px-4 border-b border-slate-100 text-sm text-slate-700 whitespace-nowrap">${dateRaw}</td>
-                    <td class="py-3 px-4 border-b border-slate-100 text-sm font-medium text-slate-900">${aptName}</td>
-                    <td class="py-3 px-4 border-b border-slate-100 text-sm text-slate-500 whitespace-nowrap">${dong}</td>
-                    <td class="py-3 px-4 border-b border-slate-100 text-sm text-slate-700 text-right whitespace-nowrap">${parseFloat(area).toFixed(2)}㎡</td>
-                    <td class="py-3 px-4 border-b border-slate-100 text-sm text-slate-700 text-center whitespace-nowrap">${floor}층</td>
-                    <td class="py-3 px-4 border-b border-slate-100 text-sm font-bold text-blue-600 text-right whitespace-nowrap">${formatKoreanPrice(priceRaw)}</td>
-                    <td class="py-3 px-4 border-b border-slate-100 text-sm text-slate-500 text-center whitespace-nowrap">${buildYear}</td>
+                    <td class="py-3 px-4 border-b border-slate-100 text-sm text-slate-700 whitespace-nowrap">${item.dateRaw}</td>
+                    <td class="py-3 px-4 border-b border-slate-100 text-sm font-medium text-slate-900">${item.aptName}</td>
+                    <td class="py-3 px-4 border-b border-slate-100 text-sm text-slate-500 whitespace-nowrap">${item.dong}</td>
+                    <td class="py-3 px-4 border-b border-slate-100 text-sm text-slate-700 text-right whitespace-nowrap">${parseFloat(item.area).toFixed(2)}㎡</td>
+                    <td class="py-3 px-4 border-b border-slate-100 text-sm text-slate-700 text-center whitespace-nowrap">${item.floor}층</td>
+                    <td class="py-3 px-4 border-b border-slate-100 text-sm font-bold text-emerald-600 text-right whitespace-nowrap">${formatKoreanPrice(item.priceRaw)}</td>
+                    <td class="py-3 px-4 border-b border-slate-100 text-sm text-slate-500 text-center whitespace-nowrap">${item.buildYear}</td>
                 `;
                 tbody.appendChild(tr);
             });
+
+            // TOP 5 랭킹 생성
+            const top5List = document.getElementById('top5List');
+            if (top5List) {
+                top5List.innerHTML = '';
+                const top5Data = [...processedData]
+                    .filter(item => item.priceNum > 0)
+                    .sort((a, b) => b.priceNum - a.priceNum)
+                    .slice(0, 5);
+
+                top5Data.forEach((item, index) => {
+                    const rank = index + 1;
+                    let rankStyle = "bg-slate-50 text-slate-500"; // 기본 (4, 5위)
+                    
+                    if (rank === 1) rankStyle = "bg-yellow-100 text-yellow-600 ring-1 ring-yellow-400"; // 1위 금색
+                    else if (rank === 2) rankStyle = "bg-slate-100 text-slate-600 ring-1 ring-slate-400"; // 2위 은색
+                    else if (rank === 3) rankStyle = "bg-amber-50 text-amber-700 ring-1 ring-amber-500"; // 3위 동색
+
+                    top5List.innerHTML += `
+                        <div class="flex items-center justify-between p-3 rounded-xl border border-slate-100 bg-white shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-3">
+                                <div class="w-7 h-7 rounded-full flex shrink-0 items-center justify-center font-bold text-xs ${rankStyle}">
+                                    ${rank}
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-800 text-sm break-keep">${item.aptName}</p>
+                                    <p class="text-xs text-slate-500 mt-0.5">${parseFloat(item.area).toFixed(2)}㎡ · ${item.floor}층</p>
+                                </div>
+                            </div>
+                            <div class="text-right pl-2 shrink-0">
+                                <p class="font-bold text-emerald-600 text-sm">${formatKoreanPrice(item.priceRaw)}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
 
             // 요약 카드 업데이트 (전체 데이터 개수 대신 유효한 거래금액 건수로 표시)
             document.getElementById('totalCount').innerHTML = `${validCount.toLocaleString()}<span class="text-base font-normal text-slate-500 ml-1">건</span>`;
@@ -300,8 +352,8 @@
             
             // 그라데이션 채우기 효과
             const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-            gradient.addColorStop(0, 'rgba(59, 130, 246, 0.5)'); // blue-500
-            gradient.addColorStop(1, 'rgba(59, 130, 246, 0.0)');
+            gradient.addColorStop(0, 'rgba(16, 185, 129, 0.5)'); // emerald-500
+            gradient.addColorStop(1, 'rgba(16, 185, 129, 0.0)');
 
             new Chart(ctx, {
                 type: 'line',
@@ -310,11 +362,11 @@
                     datasets: [{
                         label: '월별 평균 거래가 (만원)',
                         data: dataPoints,
-                        borderColor: '#3b82f6', // blue-500
+                        borderColor: '#10b981', // emerald-500
                         backgroundColor: gradient,
                         borderWidth: 2,
                         pointBackgroundColor: '#ffffff',
-                        pointBorderColor: '#3b82f6',
+                        pointBorderColor: '#10b981',
                         pointBorderWidth: 2,
                         pointRadius: 4,
                         pointHoverRadius: 6,
